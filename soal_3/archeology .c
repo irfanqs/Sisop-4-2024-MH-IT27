@@ -12,7 +12,7 @@
 #include <limits.h>
 #include <ctype.h>
 
-static const char *relics_dir = "./relics"; 
+static const char *relics_dir = "/home/dw/dani/relics"; 
 
 static int concatenate_file_parts(const char *path, char **buffer, size_t *size) {
     char part_path[PATH_MAX];
