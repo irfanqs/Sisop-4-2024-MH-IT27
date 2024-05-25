@@ -396,17 +396,6 @@ Tidak ada revisi pada soal ini
 
 ### Penjelasan
 
-# RelicsFS
-
-RelicsFS adalah sebuah file system yang dibangun menggunakan FUSE (Filesystem in Userspace) yang menyatukan bagian-bagian file yang disimpan dalam sebuah direktori dan menyajikannya sebagai file utuh.
-
-## Prasyarat
-
-Pastikan Anda memiliki library dan alat yang diperlukan untuk membangun FUSE filesystem:
-
-- **libfuse**: Library FUSE untuk mengembangkan file system di user space.
-- **gcc**: Compiler C untuk membangun program.
-
 ## Instalasi
 
 1. **Instal libfuse**:
@@ -521,8 +510,8 @@ int main(int argc, char *argv[]) {
 
 
 ### Kendala
-Tidak ada kendala pada soal ini
+Soal tidak daoat berjalan karena terkendala permission
 
 ### Revisi
-Tidak ada revisi pada soal ini
+Tidak ada revisi pada soal in
 
