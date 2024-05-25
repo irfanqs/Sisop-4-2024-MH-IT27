@@ -396,6 +396,130 @@ Tidak ada revisi pada soal ini
 
 ### Penjelasan
 
+# RelicsFS
+
+RelicsFS adalah sebuah file system yang dibangun menggunakan FUSE (Filesystem in Userspace) yang menyatukan bagian-bagian file yang disimpan dalam sebuah direktori dan menyajikannya sebagai file utuh.
+
+## Prasyarat
+
+Pastikan Anda memiliki library dan alat yang diperlukan untuk membangun FUSE filesystem:
+
+- **libfuse**: Library FUSE untuk mengembangkan file system di user space.
+- **gcc**: Compiler C untuk membangun program.
+
+## Instalasi
+
+1. **Instal libfuse**:
+    ```bash
+    sudo apt-get install fuse libfuse-dev
+    ```
+
+2. **Kloning repositori ini**:
+    ```bash
+    git clone https://github.com/username/relicsfs.git
+    cd relicsfs
+    ```
+
+3. **Kompilasi kode sumber**:
+    ```bash
+    gcc -Wall relicsfs.c `pkg-config fuse --cflags --libs` -o relicsfs
+    ```
+
+## Penggunaan
+
+1. **Buat direktori untuk mount point**:
+    ```bash
+    mkdir /path/to/mountpoint
+    ```
+
+2. **Jalankan file system**:
+    ```bash
+    ./relicsfs /path/to/mountpoint
+    ```
+
+3. **Akses file sistem**:
+    - File yang disimpan di dalam direktori `relics_dir` (dalam contoh ini: `/home/dw/dani/relics`) akan muncul sebagai file utuh di dalam mount point.
+
+4. **Unmount file system**:
+    ```bash
+    fusermount -u /path/to/mountpoint
+    ```
+
+## Struktur Kode
+
+### Global Variables
+
+- `relics_dir`: Direktori tempat menyimpan bagian-bagian file.
+
+### Fungsi Utama
+
+#### `concatenate_file_parts`
+
+Menyatukan bagian-bagian file yang dinamai dengan format `path.000`, `path.001`, dst., dan menyimpannya dalam buffer.
+```c
+static int concatenate_file_parts(const char *path, char **buffer, size_t *size) {
+   
+}
+```
+
+#### `relics_getattr`
+
+Mengambil atribut file atau direktori.
+```c
+static int relics_getattr(const char *path, struct stat *stbuf) {
+
+}
+```
+
+#### `relics_readdir`
+
+Membaca isi direktori.
+```c
+static int relics_readdir(const char *path, void *buf, fuse_fill_dir_t filler, off_t offset, struct fuse_file_info *fi) {
+
+}
+```
+
+#### `relics_open`
+
+Membuka file dan memastikan bagian-bagiannya bisa disatukan.
+```c
+static int relics_open(const char *path, struct fuse_file_info *fi) {
+
+}
+```
+
+#### `relics_read`
+
+Membaca data dari file yang sudah disatukan.
+```c
+static int relics_read(const char *path, char *buf, size_t size, off_t offset, struct fuse_file_info *fi) {
+
+}
+```
+
+### Struktur FUSE Operations
+
+Menghubungkan operasi FUSE dengan fungsi yang sesuai.
+```c
+static struct fuse_operations relics_operations = {
+    .getattr = relics_getattr,
+    .readdir = relics_readdir,
+    .open = relics_open,
+    .read = relics_read,
+};
+```
+
+### `main` Function
+
+Titik masuk untuk file system FUSE.
+```c
+int main(int argc, char *argv[]) {
+    return fuse_main(argc, argv, &relics_operations, NULL);
+}
+```
+
+
 ### Kendala
 Tidak ada kendala pada soal ini
 
