@@ -14,6 +14,25 @@ List Soal:
 
 ## Soal 1
 <details><summary>Klik untuk melihat soal</summary>
+Adfi merupakan seorang CEO agency creative bernama Ini Karya Kita. Ia sedang melakukan inovasi pada manajemen project photography Ini Karya Kita. Salah satu ide yang dia kembangkan adalah tentang pengelolaan foto project dalam sistem arsip Ini Karya Kita. Dalam membangun sistem ini, Adfi tidak bisa melakukannya sendirian, dia perlu bantuan mahasiswa Departemen Teknologi Informasi angkatan 2023 untuk membahas konsep baru yang akan mengubah project fotografinya lebih menarik untuk dilihat. Adfi telah menyiapkan portofolio hasil project fotonya yang bisa didownload dan diakses di www.inikaryakita.id . Silahkan eksplorasi web Ini Karya Kita dan temukan halaman untuk bisa mendownload projectnya. Setelah kalian download terdapat folder gallery dan bahaya.
+Pada folder “gallery”:
+Membuat folder dengan prefix "wm." Dalam folder ini, setiap gambar yang dipindahkan ke dalamnya akan diberikan watermark bertuliskan inikaryakita.id. 
+			Ex: "mv ikk.jpeg wm-foto/" 
+Output: 
+Before: (tidak ada watermark bertuliskan inikaryakita.id)
+<img width="281" alt="image" src="https://github.com/irfanqs/Sisop-4-2024-MH-IT27/assets/79549192/23a76a6a-33fc-4911-a449-ef57e2fe52a9">
+
+After: (terdapat watermark tulisan inikaryakita.id)
+<img width="282" alt="image" src="https://github.com/irfanqs/Sisop-4-2024-MH-IT27/assets/79549192/9266650a-cd86-48a5-8091-616c37deab3b">
+
+
+
+Pada folder "bahaya," terdapat file bernama "script.sh." Adfi menyadari pentingnya menjaga keamanan dan integritas data dalam folder ini. 
+Mereka harus mengubah permission pada file "script.sh" agar bisa dijalankan, karena jika dijalankan maka dapat menghapus semua dan isi dari  "gallery"
+Adfi dan timnya juga ingin menambahkan fitur baru dengan membuat file dengan prefix "test" yang ketika disimpan akan mengalami pembalikan (reverse) isi dari file tersebut.  
+
+	Catatan: Jika ada pertanyaan, bisa menghubungi Adfi via WA aja, nanti dikasih hint
+
 </details>
  
 ### Penjelasan
@@ -488,9 +507,10 @@ Jika sebuah file memiliki prefix "hex," maka isi file tersebut akan langsung di-
 Jika sebuah file memiliki prefix "rev," maka isi file tersebut akan langsung di-decode dengan cara membalikkan teksnya.
 Contoh:
 File yang belum didecode/ dienkripsi rot_13
-
+<img width="339" alt="image" src="https://github.com/irfanqs/Sisop-4-2024-MH-IT27/assets/79549192/46a3eb1d-f533-43bd-8f71-b66be65fe28c">
 
 File yang sudah didecode/ dienkripsi rot_13
+<img width="341" alt="image" src="https://github.com/irfanqs/Sisop-4-2024-MH-IT27/assets/79549192/16ce39d2-a096-4995-a7a0-9ec1ebcad558">
 
 
 Pada folder “rahasia-berkas”, Adfi dan timnya memutuskan untuk menerapkan kebijakan khusus. Mereka ingin memastikan bahwa folder dengan prefix "rahasia" tidak dapat diakses tanpa izin khusus. 
@@ -845,7 +865,38 @@ Tidak ada revisi pada soal ini
 
 ## Soal 3
 <details><summary>Klik untuk melihat soal</summary>
-	
+Seorang arkeolog menemukan sebuah gua yang didalamnya tersimpan banyak relik dari zaman praaksara, sayangnya semua barang yang ada pada gua tersebut memiliki bentuk yang terpecah belah akibat bencana yang tidak diketahui. Sang arkeolog ingin menemukan cara cepat agar ia bisa menggabungkan relik-relik yang terpecah itu, namun karena setiap pecahan relik itu masih memiliki nilai tersendiri, ia memutuskan untuk membuat sebuah file system yang mana saat ia mengakses file system tersebut ia dapat melihat semua relik dalam keadaan utuh, sementara relik yang asli tidak berubah sama sekali.
+Ketentuan :
+a. Buatlah sebuah direktori dengan ketentuan seperti pada tree berikut
+.
+├── [nama_bebas]
+├── relics
+│   ├── relic_1.png.000
+│   ├── relic_1.png.001
+│   ├── dst dst…
+│   └── relic_9.png.010
+└── report
+
+Direktori [nama_bebas] adalah direktori FUSE dengan direktori asalnya adalah direktori relics. Ketentuan Direktori [nama_bebas] adalah sebagai berikut :
+Ketika dilakukan listing, isi dari direktori [nama_bebas] adalah semua relic dari relics yang telah tergabung.
+
+Ketika dilakukan copy (dari direktori [nama_bebas] ke tujuan manapun), file yang disalin adalah file dari direktori relics yang sudah tergabung.
+
+Ketika ada file dibuat, maka pada direktori asal (direktori relics) file tersebut akan dipecah menjadi sejumlah pecahan dengan ukuran maksimum tiap pecahan adalah 10kb.
+
+File yang dipecah akan memiliki nama [namafile].000 dan seterusnya sesuai dengan jumlah pecahannya.
+Ketika dilakukan penghapusan, maka semua pecahannya juga ikut terhapus.
+
+Direktori report adalah direktori yang akan dibagikan menggunakan Samba File Server. Setelah kalian berhasil membuat direktori [nama_bebas], jalankan FUSE dan salin semua isi direktori [nama_bebas] pada direktori report.
+
+
+Catatan:
+pada contoh terdapat 20 relic, namun pada zip file hanya akan ada 10 relic
+[nama_bebas] berarti namanya dibebaskan
+pada soal 3c, cukup salin secara manual. File Server hanya untuk membuktikan bahwa semua file pada direktori [nama_bebas] dapat dibuka dengan baik.
+
+discoveries.zip
+
 </details>
 
 ### Penjelasan
