@@ -20,10 +20,8 @@ Membuat folder dengan prefix "wm." Dalam folder ini, setiap gambar yang dipindah
 			Ex: "mv ikk.jpeg wm-foto/" 
 Output: 
 Before: (tidak ada watermark bertuliskan inikaryakita.id)
-<img width="281" alt="image" src="https://github.com/irfanqs/Sisop-4-2024-MH-IT27/assets/79549192/23a76a6a-33fc-4911-a449-ef57e2fe52a9">
 
 After: (terdapat watermark tulisan inikaryakita.id)
-<img width="282" alt="image" src="https://github.com/irfanqs/Sisop-4-2024-MH-IT27/assets/79549192/9266650a-cd86-48a5-8091-616c37deab3b">
 
 
 
@@ -507,10 +505,8 @@ Jika sebuah file memiliki prefix "hex," maka isi file tersebut akan langsung di-
 Jika sebuah file memiliki prefix "rev," maka isi file tersebut akan langsung di-decode dengan cara membalikkan teksnya.
 Contoh:
 File yang belum didecode/ dienkripsi rot_13
-<img width="339" alt="image" src="https://github.com/irfanqs/Sisop-4-2024-MH-IT27/assets/79549192/46a3eb1d-f533-43bd-8f71-b66be65fe28c">
 
 File yang sudah didecode/ dienkripsi rot_13
-<img width="341" alt="image" src="https://github.com/irfanqs/Sisop-4-2024-MH-IT27/assets/79549192/16ce39d2-a096-4995-a7a0-9ec1ebcad558">
 
 
 Pada folder “rahasia-berkas”, Adfi dan timnya memutuskan untuk menerapkan kebijakan khusus. Mereka ingin memastikan bahwa folder dengan prefix "rahasia" tidak dapat diakses tanpa izin khusus. 
