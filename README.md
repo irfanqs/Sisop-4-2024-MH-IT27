@@ -10,7 +10,7 @@ List Soal:
  - [Soal 1](https://github.com/irfanqs/Sisop-4-2024-MH-IT27/tree/main/soal_1)
  - [Soal 2](https://github.com/irfanqs/Sisop-4-2024-MH-IT27/tree/main/soal_2)
  - [Soal 3](https://github.com/irfanqs/Sisop-4-2024-MH-IT27/tree/main/soal_3)
-=
+
 ## Soal 1
 <details><summary>Klik untuk melihat soal</summary>
 </details>
